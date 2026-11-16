@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Perfil</title>
+</head>
+<body>
+  <h1 style="font-family:sans-serif">Perfil</h1>
+
+  <table style="font-family:sans-serif;border-collapse:collapse">
+    <tr><td style="padding:4px 12px">Usuario</td><td style="padding:4px 12px"><b th:text="${usuario.nombre()}">?</b></td></tr>
+    <tr><td style="padding:4px 12px">Rol</td><td style="padding:4px 12px"><b th:text="${usuario.rol()}">?</b></td></tr>
+    <tr><td style="padding:4px 12px">Módulo</td><td style="padding:4px 12px"><b th:text="${modulo}">?</b></td></tr>
+  </table>
+
+  <p style="font-family:sans-serif">
+    <a th:href="@{'/' + ${modulo} + '/logout'}">cerrar sesión</a> &middot;
+    <a href="/">portada</a>
+  </p>
+
+</body>
+</html>

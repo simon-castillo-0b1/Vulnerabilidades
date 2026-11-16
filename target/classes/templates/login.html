@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+</head>
+<body>
+
+
+  <h1 style="font-family:sans-serif">
+    Login &mdash; módulo <span th:text="${modulo}">módulo</span>
+  </h1>
+
+  <form method="post" th:action="@{'/' + ${modulo} + '/login'}" style="font-family:sans-serif">
+    <p>
+      <label for="nombre">Usuario</label><br>
+      <input id="nombre" name="nombre" size="30">
+    </p>
+    <p>
+      <label for="clave">Contraseña</label><br>
+      <input id="clave" name="clave" type="password" size="30">
+    </p>
+    <p><button type="submit">Ingresar</button></p>
+  </form>
+  <p th:if="${error}" style="color:#c0392b;font-family:sans-serif;font-weight:bold"
+     th:text="${error}">error</p>
+
+  <p style="font-family:sans-serif">
+    <a href="/vulnerable/login">módulo vulnerable</a> &middot;
+    <a href="/seguro/login">módulo seguro</a> &middot;
+    <a href="/">portada</a>
+  </p>
+
+</body>
+</html>
